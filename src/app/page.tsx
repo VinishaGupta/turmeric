@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BrainCircuit, Flame, ShieldCheck, Sparkles } from "lucide-react";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       price: "₹249",
       oldPrice: "₹349",
       tileClass: "tile-root",
+      image: "/products/lakadong-roots.jpg",
     },
     {
       tag: "Turmeric Powder",
@@ -32,6 +34,7 @@ export default function Home() {
       price: "₹399",
       oldPrice: "₹499",
       tileClass: "tile-powder",
+      image: "/products/powder.png",
     },
   ];
 
@@ -187,20 +190,13 @@ export default function Home() {
                 <article className="product-card" key={product.name}>
                   <div className={`product-image ${product.tileClass}`}>
                     <span className={`tag ${product.tagClass}`}>{product.tag}</span>
-                    <div className="product-visual" aria-hidden="true">
-                      {product.tileClass === "tile-root" ? (
-                        <>
-                          <span className="root-cluster root-cluster-a" />
-                          <span className="root-cluster root-cluster-b" />
-                          <span className="root-cluster root-cluster-c" />
-                        </>
-                      ) : (
-                        <>
-                          <span className="powder-pouch" />
-                          <span className="powder-bowl" />
-                        </>
-                      )}
-                    </div>
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      width={400}
+                      height={400}
+                      className="product-image-img"
+                    />
                   </div>
                   <div className="product-content">
                     <p className="kicker">{product.kicker}</p>
