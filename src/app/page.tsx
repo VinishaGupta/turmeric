@@ -2,96 +2,36 @@ import { BrainCircuit, Flame, ShieldCheck, Sparkles } from "lucide-react";
 
 export default function Home() {
   const highlights = [
-    { emoji: "🚚", title: "Free Shipping", text: "Orders above ₹499" },
-    { emoji: "🌿", title: "100% Organic", text: "No additives ever" },
-    { emoji: "🔒", title: "Secure Payment", text: "Razorpay & UPI" },
-    { emoji: "↩️", title: "Easy Returns", text: "7-day policy" },
+    { title: "Free Shipping", text: "Orders above ₹499" },
+    { title: "100% Organic", text: "No additives ever" },
+    { title: "Secure Payment", text: "Razorpay & UPI" },
+    { title: "Easy Returns", text: "7-day policy" },
   ];
 
   const products = [
     {
-      tag: "Organic",
-      tagClass: "tag-green",
+      tag: "Raw Turmeric",
+      tagClass: "tag-olive",
       kicker: "Raw Turmeric",
-      name: "Farm Fresh Haldi Root",
+      name: "Lakadong Haldi Roots",
       description:
-        "Stone-ground from Erode, Tamil Nadu. Rich, earthy aroma with deep golden hue.",
-      rating: "4.9",
-      reviews: "(218 reviews)",
-      price: "₹299",
-      oldPrice: "₹399",
-      icon: "🌿",
-      tileClass: "tile-sand",
-    },
-    {
-      tag: "Bestseller",
-      tagClass: "tag-orange",
-      kicker: "Premium Powder",
-      name: "High Curcumin Haldi",
-      description:
-        "5.8% curcumin content - 3x higher than market standard. Lab-certified purity.",
-      rating: "4.9",
-      reviews: "(342 reviews)",
-      price: "₹449",
-      oldPrice: "₹599",
-      icon: "✨",
-      tileClass: "tile-cream",
-    },
-    {
-      tag: "New",
-      tagClass: "tag-dark",
-      kicker: "Wellness Blend",
-      name: "Golden Milk Mix",
-      description:
-        "Haldi + ashwagandha + black pepper. Perfect blend for your evening haldi doodh.",
-      rating: "4.7",
-      reviews: "(89 reviews)",
-      price: "₹349",
-      oldPrice: "₹449",
-      icon: "🍵",
-      tileClass: "tile-mint",
-    },
-    {
-      tag: "Premium",
-      tagClass: "tag-gold",
-      kicker: "Gift Sets",
-      name: "Haldi Hamper Box",
-      description:
-        "Curated gift box with 3 varieties - raw, powder and golden milk mix. Glass jar included.",
-      rating: "5.0",
-      reviews: "(61 reviews)",
-      price: "₹899",
-      oldPrice: "₹1099",
-      icon: "🫙",
-      tileClass: "tile-peach",
-    },
-    {
-      tag: "20% Off",
-      tagClass: "tag-amber",
-      kicker: "Supplements",
-      name: "Curcumin Capsules",
-      description:
-        "60 capsules with BioPerine for 20x better absorption. Vegan and gluten-free.",
-      rating: "4.6",
-      reviews: "(155 reviews)",
-      price: "₹699",
-      oldPrice: "₹899",
-      icon: "💊",
-      tileClass: "tile-lavender",
-    },
-    {
-      tag: "Natural",
-      tagClass: "tag-green",
-      kicker: "Beauty Care",
-      name: "Haldi Ubtan Pack",
-      description:
-        "Traditional face pack with rose petals, sandalwood and pure haldi. Glowing skin guaranteed.",
-      rating: "4.8",
-      reviews: "(203 reviews)",
+        "Small-batch roots sourced from clean hill farms and packed for freshness.",
+      highlights: ["Fresh roots", "Deep golden color", "Strong aroma"],
       price: "₹249",
-      oldPrice: "₹299",
-      icon: "🧴",
-      tileClass: "tile-pink",
+      oldPrice: "₹349",
+      tileClass: "tile-root",
+    },
+    {
+      tag: "Turmeric Powder",
+      tagClass: "tag-amber-soft",
+      kicker: "Premium Powder",
+      name: "High Curcumin Powder",
+      description:
+        "Finely milled turmeric powder with rich color and premium aroma.",
+      highlights: ["Stone ground", "Lab tested", "Bold color"],
+      price: "₹399",
+      oldPrice: "₹499",
+      tileClass: "tile-powder",
     },
   ];
 
@@ -172,7 +112,7 @@ export default function Home() {
                 The <span>Golden</span> Spice of India
               </h1>
               <p className="hero-copy">
-                From the ancient fields of Rajasthan to your kitchen - pure haldi
+                From the ancient fields to your kitchen - pure haldi
                 with the highest curcumin content, certified organic and
                 stone-ground for maximum potency.
               </p>
@@ -217,9 +157,9 @@ export default function Home() {
 
         <section className="feature-strip">
           <div className="container feature-grid">
-            {highlights.map((item) => (
+            {highlights.map((item, index) => (
               <article className="feature-item" key={item.title}>
-                <span className="feature-emoji">{item.emoji}</span>
+                <span className="feature-index">0{index + 1}</span>
                 <div>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
@@ -230,54 +170,60 @@ export default function Home() {
         </section>
 
         <section id="collection" className="collection-section">
-          <div className="container">
-            <p className="section-eyebrow">✦ Our Collection</p>
-            <h2 className="section-title">
-              Finest <span>Haldi</span> Products
-            </h2>
+          <div className="container collection-layout">
+            <div className="collection-intro">
+              <p className="section-eyebrow">Our Collection</p>
+              <h2 className="section-title">
+                Finest <span>Haldi</span> Products
+              </h2>
+              <p className="section-copy collection-copy">
+                Two essentials for your kitchen: whole roots for freshness and
+                powder for everyday cooking.
+              </p>
+            </div>
 
-            <div className="product-grid">
+            <div className="product-grid product-grid-two">
               {products.map((product) => (
                 <article className="product-card" key={product.name}>
                   <div className={`product-image ${product.tileClass}`}>
                     <span className={`tag ${product.tagClass}`}>{product.tag}</span>
-                    <span className="product-icon" aria-hidden="true">
-                      {product.icon}
-                    </span>
+                    <div className="product-visual" aria-hidden="true">
+                      {product.tileClass === "tile-root" ? (
+                        <>
+                          <span className="root-cluster root-cluster-a" />
+                          <span className="root-cluster root-cluster-b" />
+                          <span className="root-cluster root-cluster-c" />
+                        </>
+                      ) : (
+                        <>
+                          <span className="powder-pouch" />
+                          <span className="powder-bowl" />
+                        </>
+                      )}
+                    </div>
                   </div>
                   <div className="product-content">
                     <p className="kicker">{product.kicker}</p>
                     <h3>{product.name}</h3>
                     <p className="description">{product.description}</p>
-                    <p className="rating">★★★★★ {product.rating} {product.reviews}</p>
+                    <ul className="product-highlights">
+                      {product.highlights.map((highlight) => (
+                        <li key={highlight}>{highlight}</li>
+                      ))}
+                    </ul>
                     <div className="price-row">
                       <div>
                         <strong>{product.price}</strong>
                         <s>{product.oldPrice}</s>
                       </div>
                       <button type="button" aria-label={`Add ${product.name} to cart`}>
-                        +
+                        Add
                       </button>
                     </div>
                   </div>
                 </article>
               ))}
             </div>
-
-            <article className="promo-banner">
-              <div>
-                <h3>
-                  Festival Special - <span>Haldi</span> Bundles
-                </h3>
-                <p>
-                  Stock up for weddings, ceremonies and gifting season. Bulk
-                  orders available with custom packaging and branding.
-                </p>
-                <button type="button" className="btn btn-primary">
-                  Get Bundle Offer →
-                </button>
-              </div>
-            </article>
           </div>
         </section>
 
