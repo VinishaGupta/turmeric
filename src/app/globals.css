@@ -1,0 +1,678 @@
+@import "tailwindcss";
+
+:root {
+  --page-bg: #f3ede1;
+  --surface: #f8f7f5;
+  --ink: #201207;
+  --muted: #7d684f;
+  --gold: #f1a534;
+  --amber: #b36700;
+  --dark-brown: #220d00;
+  --dark-brown-2: #351400;
+  --line: rgba(255, 255, 255, 0.12);
+}
+
+@theme inline {
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-playfair);
+}
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: var(--font-manrope), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-shell {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(1120px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(20, 8, 0, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-content {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+}
+
+.brand-hindi {
+  color: var(--gold);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.brand-gold {
+  color: #fff8ea;
+  font-family: var(--font-playfair), serif;
+  font-size: 2.35rem;
+  line-height: 1;
+  font-style: italic;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  color: #fff2d6;
+}
+
+.nav-links a {
+  font-weight: 700;
+  font-size: 1.15rem;
+  opacity: 0.96;
+}
+
+.cart-btn {
+  background: transparent;
+  color: #fff6e8;
+  border: 1px solid rgba(255, 230, 190, 0.35);
+  border-radius: 14px;
+  padding: 0.85rem 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-section {
+  color: #fff5ea;
+  background:
+    radial-gradient(circle at 72% 42%, rgba(248, 157, 30, 0.3), transparent 36%),
+    linear-gradient(120deg, var(--dark-brown), var(--dark-brown-2));
+  padding: 4rem 0 3.3rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2.6rem;
+  align-items: end;
+}
+
+.eyebrow,
+.section-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #f5aa3e;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.hero-title,
+.section-title {
+  font-family: var(--font-playfair), serif;
+  margin: 0.8rem 0 1rem;
+  font-size: clamp(3rem, 6vw, 5.3rem);
+  line-height: 0.95;
+  max-width: 10ch;
+}
+
+.hero-title span,
+.section-title span,
+.promo-banner h3 span {
+  color: #f4ab3f;
+  font-style: italic;
+}
+
+.hero-copy {
+  max-width: 36ch;
+  color: #f0d2ad;
+  font-size: 1.95rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  border-radius: 14px;
+  border: 1px solid rgba(255, 210, 138, 0.35);
+  padding: 0.85rem 1.35rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(160deg, #7a3e00, #5a2800);
+  color: #fff8ef;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff8ef;
+}
+
+.jar-wrap {
+  width: min(370px, 88%);
+  margin: 0 auto;
+  position: relative;
+  filter: drop-shadow(0 14px 30px rgba(240, 150, 35, 0.34));
+}
+
+.jar-cap {
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #d9af2c, #a67506);
+  border: 1px solid rgba(255, 226, 152, 0.6);
+}
+
+.jar-body {
+  margin-top: -5px;
+  height: 280px;
+  border: 4px solid rgba(243, 186, 66, 0.58);
+  border-radius: 36px;
+  background: rgba(255, 213, 132, 0.1);
+  overflow: hidden;
+}
+
+.jar-fill {
+  height: 58%;
+  margin-top: 43%;
+  background: linear-gradient(180deg, rgba(247, 170, 54, 0.98), rgba(185, 100, 0, 0.98));
+}
+
+.jar-label {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72%;
+  background: #f8f5ee;
+  color: #8a531a;
+  border-radius: 16px;
+  text-align: center;
+  padding: 0.9rem 1rem 0.7rem;
+  box-shadow: 0 10px 20px rgba(25, 8, 0, 0.2);
+}
+
+.jar-label strong {
+  display: block;
+  font-family: var(--font-playfair), serif;
+  font-size: 1.9rem;
+}
+
+.jar-label small {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+}
+
+.hero-stats {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+
+.stat-card {
+  border: 1px solid rgba(255, 216, 163, 0.2);
+  border-radius: 20px;
+  background: rgba(255, 167, 67, 0.1);
+  padding: 1.1rem 1rem;
+  text-align: center;
+}
+
+.stat-card strong {
+  display: block;
+  color: #ffb442;
+  font-size: 2.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.stat-card span {
+  color: #f0d0a8;
+  font-size: 1.2rem;
+}
+
+.feature-strip {
+  background: #1e0b00;
+  color: #fff3db;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.feature-item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 2rem 1.3rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.feature-item:last-child {
+  border-right: none;
+}
+
+.feature-item h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.1;
+}
+
+.feature-item p {
+  margin: 0.3rem 0 0;
+  color: #d3b894;
+  font-size: 1.15rem;
+}
+
+.feature-emoji {
+  font-size: 1.8rem;
+}
+
+.collection-section,
+.benefits-section,
+.reviews-section {
+  padding: 4.7rem 0;
+}
+
+.section-eyebrow,
+.section-title {
+  text-align: center;
+}
+
+.section-title {
+  color: #29150a;
+  max-width: none;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.45rem;
+  margin-top: 2.5rem;
+}
+
+.product-card {
+  border-radius: 30px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 20px 28px rgba(32, 18, 8, 0.08);
+}
+
+.product-image {
+  position: relative;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-icon {
+  font-size: 5.2rem;
+}
+
+.tile-sand { background: #ecd8ab; }
+.tile-cream { background: #f0de95; }
+.tile-mint { background: #bfe0c7; }
+.tile-peach { background: #f0d8c2; }
+.tile-lavender { background: #cbc2e8; }
+.tile-pink { background: #e8cfdd; }
+
+.tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.tag-green { background: #2f9a4f; color: #efffea; }
+.tag-orange { background: #ff5f31; color: #fff; }
+.tag-dark { background: #2b1600; color: #fcb738; }
+.tag-gold { background: #9f6f00; color: #ffc95a; }
+.tag-amber { background: #f3a420; color: #2e1700; }
+
+.product-content {
+  padding: 1.5rem;
+}
+
+.kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #8b632a;
+  font-size: 0.9rem;
+}
+
+.product-content h3 {
+  margin: 0.5rem 0 0.65rem;
+  font-family: var(--font-playfair), serif;
+  font-size: 2.1rem;
+  line-height: 1.1;
+}
+
+.description {
+  margin: 0;
+  color: #6f5430;
+  font-size: 1.08rem;
+  line-height: 1.45;
+  min-height: 95px;
+}
+
+.rating {
+  margin: 0.9rem 0;
+  color: #b6841d;
+  font-size: 1.04rem;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price-row strong {
+  font-family: var(--font-playfair), serif;
+  font-size: 2.2rem;
+}
+
+.price-row s {
+  margin-left: 0.5rem;
+  color: #906934;
+}
+
+.price-row button {
+  width: 3.1rem;
+  height: 3.1rem;
+  border-radius: 14px;
+  border: 0;
+  background: #f1f1f1;
+  color: #8a8a8a;
+  font-size: 1.5rem;
+}
+
+.promo-banner {
+  margin-top: 2.7rem;
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 75% 44%, rgba(255, 177, 64, 0.36), transparent 35%),
+    linear-gradient(120deg, #532500, #7a3a00);
+  color: #fff2dd;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.promo-banner h3 {
+  margin: 0;
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(2.3rem, 4vw, 3.7rem);
+  line-height: 1.05;
+}
+
+.promo-banner p {
+  margin: 1rem 0 1.5rem;
+  color: #f3cf9e;
+  max-width: 38ch;
+  font-size: 1.35rem;
+}
+
+.discount-badge {
+  width: 180px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #f4aa38;
+  color: #2d1300;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  font-weight: 900;
+  transform: rotate(-17deg);
+  flex-shrink: 0;
+}
+
+.benefits-grid,
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 2.4rem;
+}
+
+.benefit-card,
+.review-card {
+  background: #f7f7f8;
+  border-radius: 30px;
+  padding: 1.6rem;
+  text-align: center;
+}
+
+.benefit-icon {
+  display: block;
+  font-size: 2.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.benefit-card h3 {
+  margin: 0;
+  font-family: var(--font-playfair), serif;
+  font-size: 2rem;
+}
+
+.benefit-card p {
+  margin: 0.8rem 0 0;
+  color: #6b4f2b;
+  line-height: 1.45;
+}
+
+.reviews-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.review-card {
+  text-align: left;
+}
+
+.quote {
+  margin: 0;
+  color: #7a5a33;
+  line-height: 1.5;
+  font-size: 1.35rem;
+  font-style: italic;
+}
+
+.reviewer {
+  margin-top: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.reviewer span {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background: #f2dfb7;
+  display: grid;
+  place-items: center;
+}
+
+.reviewer strong {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.reviewer small {
+  color: #89653a;
+  font-size: 1rem;
+}
+
+.site-footer {
+  margin-top: 0.5rem;
+  background: #1d0b00;
+  color: #f7ebd4;
+  padding-top: 3.2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.footer-grid h4 {
+  margin: 0 0 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer-grid p,
+.footer-grid a {
+  margin: 0 0 0.55rem;
+  color: #d7c6ad;
+  display: block;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2.1rem;
+  padding: 1.2rem 0 2.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socials {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.socials span {
+  width: 2.65rem;
+  height: 2.65rem;
+  border-radius: 12px;
+  background: rgba(255, 211, 152, 0.12);
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 1080px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero-grid,
+  .product-grid,
+  .benefits-grid,
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: min(1120px, calc(100% - 1.5rem));
+  }
+
+  .hero-section,
+  .collection-section,
+  .benefits-section,
+  .reviews-section {
+    padding: 3rem 0;
+  }
+
+  .hero-grid,
+  .feature-grid,
+  .product-grid,
+  .benefits-grid,
+  .footer-grid,
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-content {
+    min-height: 74px;
+  }
+
+  .brand-hindi {
+    font-size: 1.6rem;
+  }
+
+  .brand-gold {
+    font-size: 2rem;
+  }
+
+  .cart-btn,
+  .btn {
+    font-size: 1rem;
+  }
+
+  .hero-title,
+  .section-title {
+    max-width: 12ch;
+    font-size: clamp(2.2rem, 13vw, 3.3rem);
+  }
+
+  .hero-copy {
+    font-size: 1.25rem;
+  }
+
+  .feature-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .feature-item:last-child {
+    border-bottom: none;
+  }
+
+  .promo-banner {
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 28px;
+  }
+
+  .discount-badge {
+    width: 120px;
+    font-size: 2rem;
+    align-self: flex-end;
+  }
+}
