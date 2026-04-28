@@ -438,7 +438,7 @@ a {
   color: #fff2dd;
   padding: 3rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 2rem;
 }
@@ -455,20 +455,6 @@ a {
   color: #f3cf9e;
   max-width: 38ch;
   font-size: 1.35rem;
-}
-
-.discount-badge {
-  width: 180px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #f4aa38;
-  color: #2d1300;
-  display: grid;
-  place-items: center;
-  font-size: 3rem;
-  font-weight: 900;
-  transform: rotate(-17deg);
-  flex-shrink: 0;
 }
 
 .benefits-grid,
@@ -680,12 +666,6 @@ a {
     flex-direction: column;
     align-items: flex-start;
     border-radius: 28px;
-  }
-
-  .discount-badge {
-    width: 120px;
-    font-size: 2rem;
-    align-self: flex-end;
   }
 }
 

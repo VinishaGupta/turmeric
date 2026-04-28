@@ -275,7 +275,6 @@ export default function Home() {
                   Get Bundle Offer →
                 </button>
               </div>
-              <div className="discount-badge">30% Off</div>
             </article>
           </div>
         </section>
