@@ -1,3 +1,5 @@
+import { BrainCircuit, Flame, ShieldCheck, Sparkles } from "lucide-react";
+
 export default function Home() {
   const highlights = [
     { emoji: "🚚", title: "Free Shipping", text: "Orders above ₹499" },
@@ -95,24 +97,24 @@ export default function Home() {
 
   const benefits = [
     {
-      emoji: "🛡️",
-      title: "Immunity Booster",
-      text: "Curcumin activates your immune defenses with daily intake.",
+      icon: ShieldCheck,
+      title: "Immunity",
+      text: "Strengthens the natural defense mechanisms of your body.",
     },
     {
-      emoji: "🔥",
+      icon: Flame,
       title: "Anti-Inflammatory",
-      text: "As effective as many anti-inflammatory drugs without side effects.",
+      text: "Natural relief for joint health and muscle recovery.",
     },
     {
-      emoji: "🧠",
+      icon: BrainCircuit,
       title: "Brain Health",
-      text: "Boosts BDNF levels, improving memory, focus and mental clarity.",
+      text: "Boosts cognitive function and mental clarity naturally.",
     },
     {
-      emoji: "✨",
+      icon: Sparkles,
       title: "Skin Glow",
-      text: "Natural antiseptic and brightener long used in Indian skincare rituals.",
+      text: "Detoxifies from within for a luminous, healthy complexion.",
     },
   ];
 
@@ -285,11 +287,17 @@ export default function Home() {
             <h2 className="section-title">
               The <span>Ancient</span> Superfood
             </h2>
+            <p className="section-copy">
+              Used for millennia in Ayurveda, Haldi Gold brings the clinical
+              potency of curcumin into your modern daily ritual.
+            </p>
 
             <div className="benefits-grid">
               {benefits.map((item) => (
                 <article className="benefit-card" key={item.title}>
-                  <span className="benefit-icon">{item.emoji}</span>
+                  <span className="benefit-icon" aria-hidden="true">
+                    <item.icon className="benefit-icon-svg" />
+                  </span>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
                 </article>

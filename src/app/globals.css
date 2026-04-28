@@ -321,6 +321,15 @@ a {
   max-width: none;
 }
 
+.section-copy {
+  max-width: 52ch;
+  margin: 0.75rem auto 0;
+  text-align: center;
+  color: #7b6a57;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -468,27 +477,39 @@ a {
 .benefit-card,
 .review-card {
   background: #f7f7f8;
-  border-radius: 30px;
-  padding: 1.6rem;
+  border-radius: 18px;
+  padding: 1.7rem 1.25rem 1.6rem;
   text-align: center;
 }
 
 .benefit-icon {
-  display: block;
-  font-size: 2.8rem;
-  margin-bottom: 0.9rem;
+  width: 3.8rem;
+  height: 3.8rem;
+  margin: 0 auto 1.15rem;
+  border-radius: 50%;
+  background: #fbf3df;
+  color: #a97b14;
+  display: grid;
+  place-items: center;
+}
+
+.benefit-icon-svg {
+  width: 1.9rem;
+  height: 1.9rem;
 }
 
 .benefit-card h3 {
   margin: 0;
-  font-family: var(--font-playfair), serif;
-  font-size: 2rem;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.2;
 }
 
 .benefit-card p {
-  margin: 0.8rem 0 0;
+  margin: 0.9rem 0 0;
   color: #6b4f2b;
   line-height: 1.45;
+  font-size: 0.98rem;
 }
 
 .reviews-grid {
@@ -623,6 +644,11 @@ a {
   .footer-grid,
   .hero-stats {
     grid-template-columns: 1fr;
+  }
+
+  .section-copy {
+    max-width: 100%;
+    font-size: 1rem;
   }
 
   .nav-content {
