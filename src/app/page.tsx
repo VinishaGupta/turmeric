@@ -195,6 +195,7 @@ export default function Home() {
                       alt={product.name}
                       width={400}
                       height={400}
+                      priority
                       className="product-image-img"
                     />
                   </div>
