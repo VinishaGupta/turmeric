@@ -92,9 +92,9 @@ a {
   background: transparent;
   color: #fff6e8;
   border: 1px solid rgba(255, 230, 190, 0.35);
-  border-radius: 14px;
-  padding: 0.85rem 1.2rem;
-  font-size: 1.5rem;
+  border-radius: 12px;
+  padding: 0.55rem 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -176,6 +176,18 @@ a {
   margin: 0 auto;
   position: relative;
   filter: drop-shadow(0 14px 30px rgba(240, 150, 35, 0.34));
+  transform-origin: center bottom;
+  animation: jar-bounce 3.2s ease-in-out infinite;
+}
+
+@keyframes jar-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .jar-cap {
@@ -674,5 +686,11 @@ a {
     width: 120px;
     font-size: 2rem;
     align-self: flex-end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jar-wrap {
+    animation: none;
   }
 }
