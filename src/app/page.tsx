@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BrainCircuit, Flame, ShieldCheck, Sparkles } from "lucide-react";
+import { BrainCircuit, Flame, ShieldCheck, ShoppingCart, Sparkles } from "lucide-react";
 
 export default function Home() {
   const highlights = [
@@ -101,7 +101,8 @@ export default function Home() {
             <a href="#">About</a>
           </nav>
           <button className="cart-btn" type="button">
-            🛒 Cart (0)
+            <ShoppingCart size={19} style={{ verticalAlign: 'middle', marginRight: 6 }} />
+            <span style={{ verticalAlign: 'middle', fontWeight: 600 }}>Cart (0)</span>
           </button>
         </div>
       </header>
